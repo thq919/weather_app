@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_app/core/cubits/bool_cubit.dart';
 import 'package:weather_app/features/weather_details/presentation/cubits/cache/get_weather_details_cache_cubit.dart';
 
 import '../../../../setup.dart';

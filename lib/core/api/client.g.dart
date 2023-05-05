@@ -31,7 +31,7 @@ class _RestClient implements RestClient {
       r'units': units,
     };
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<WeatherDetailsResponse>(Options(
       method: 'GET',
