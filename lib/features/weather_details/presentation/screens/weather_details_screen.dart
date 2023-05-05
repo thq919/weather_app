@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/core/router/app_router.dart';
 import 'package:weather_app/features/weather_details/presentation/cubits/cache/get_weather_details_cache_cubit.dart';
 
 import '../../../../setup.dart';
@@ -21,11 +22,8 @@ class _WeatherDetailsScreenState extends State<WeatherDetailsScreen> {
 
   final subScreen = Scaffold(
     appBar: AppBar(title: Row(children: const [Text("Назад")])),
-    body: Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: WeatherDetailsElement(
-          getIt<GetWeatherDetailsCacheCubit>().state.get3DaysWhereLowest),
-    ),
+    body: WeatherDetailsElement(
+        getIt<GetWeatherDetailsCacheCubit>().state.get3DaysWhereLowest),
   );
 
   @override
@@ -37,9 +35,7 @@ class _WeatherDetailsScreenState extends State<WeatherDetailsScreen> {
           children: [
             const Text("Назад"),
             TextButton(
-              onPressed: () => Navigator.of(context).push<void>(
-                  MaterialPageRoute<void>(
-                      builder: (BuildContext context) => subScreen)),
+              onPressed: () => getIt<AppRouter>().pushWidget(subScreen),
               style: TextButton.styleFrom(
                 backgroundColor: Colors.yellow.withOpacity(0.8),
               ),

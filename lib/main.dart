@@ -22,6 +22,7 @@ void main() async {
       configureDependencies();
       runApp(const App());
     },
-    (error, stack) async {},
+    (error, stack) async {
+    },
   );
 }

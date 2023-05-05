@@ -16,11 +16,14 @@ class WeatherDetailsElement extends StatelessWidget {
       shrinkWrap: true,
       scrollDirection: Axis.vertical,
       itemCount: state.response.list.length,
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       itemBuilder: (context, index) {
         final item = state.response.list[index];
         return Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
+            height: 100,
+            width: 100,
             decoration: BoxDecoration(
               borderRadius: const BorderRadius.all(Radius.circular(8)),
               gradient: LinearGradient(
